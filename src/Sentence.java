@@ -1,4 +1,4 @@
-//File Name: Sentence.java
+package src;//File Name: Sentence.java
 //Name: Julian Singer
 //OSIS: N/A
 
