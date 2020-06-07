@@ -34,14 +34,19 @@ public class Sentence {
         }
         return words;
     }
+    //To DO:
+    //1) make a breakdown with String.split();
 
-    // public static void main(String[] args){
-    //     String str = "how, do. YOU know? Your an idiot!Dumbass";
-    //     Sentence sen1 = new Sentence();
-    //     sen1.words = sen1.breakDown(str);
-    //     for (int i = 0; i< sen1.words.length; i++)
-    //     {
-    //         System.out.println(sen1.words[i]);
-    //     }
-    // }
+//     public static void main(String[] args){
+//         String str = "how, do. YOU know? Your an idiot!Dumbass";
+//         Sentence sen1 = new Sentence();
+//         sen1.words = sen1.breakDown(str);
+//         for (int i = 0; i< sen1.words.length; i++)
+//         {
+//             System.out.println(sen1.words[i]);
+//         }
+//     }
+
+    // NOTE:
+    //press the hammer to build it, arrow to run
 }
