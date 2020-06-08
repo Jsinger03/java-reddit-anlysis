@@ -13,10 +13,10 @@ package src;
 /*
  */
 
-import java.util.StringTokenizer;
+//import java.util.StringTokenizer;
 
 public class Sentence {
-    public String[] words;
+    //public String[] words;
     public Sentence(){
     }
 
@@ -51,7 +51,7 @@ public class Sentence {
 
      public static void main(String[] args){
          String str = "how,  1 do. YOU know? What! IS  Life?!";
-         String[] sen1 = new String[1];
+         String[] sen1;
          sen1 = Sentence.breakDown(str);
          for (int i = 0; i< sen1.length; i++)
          {
