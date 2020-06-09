@@ -44,7 +44,7 @@ public class Sentence {
             //for testing purposes^
         }
         words = helper.split("\\s+|,\\s*|\\.\\s*");
-        System.out.println(words.length);
+        //System.out.println(words.length);
         return words;
         //note: any character outside of letters and numbers will be lost
     }
