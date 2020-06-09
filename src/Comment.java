@@ -55,7 +55,7 @@ public class Comment {
         value = BASE_VALUE;
         value = valueOfComment();
     }
-    public int valueOfComment(){
+    private int valueOfComment(){
         //this will parse through the string of words, and compare it to the string[] of good words and the string[] of bad words
         //good words will add value to the base value of 50
         //bad words will detract from it
@@ -70,9 +70,9 @@ public class Comment {
     }
     public static void main(String[] args){
         Comment test = new Comment("Good, I can feel your anger. Strike me down with all your hatred and your jounrey towards the dark side shall be complete");
-        System.out.println(test.valueOfComment());
+        //System.out.println(test.valueOfComment());
         Comment GoodComment = new Comment("good, amicable, yay, happy, cool, awesome");
-        System.out.println(GoodComment.valueOfComment());
+        //System.out.println(GoodComment.valueOfComment());
         System.out.println(GoodComment.value);
     }
 }
