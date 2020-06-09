@@ -20,6 +20,7 @@ import java.io.File;
 
 public class Comment {
 
+//--------------------------------------------------------------------------------------------------------
     private File goodWords = new File("positive-words.txt");
     private ArrayList<String> good = new ArrayList<String>();
     private Scanner gw;
@@ -31,21 +32,46 @@ public class Comment {
             e.printStackTrace();
         }
     }
-    { for (int i = 0; gw.hasNext(); i++)
+
     {
-        String temp = gw.nextLine();
-        good.add(temp);
-        System.out.println(good.get(i));
-    }
+        for (int i = 0; gw.hasNext(); i++) {
+            String temp = gw.nextLine();
+            good.add(temp);
+            //System.out.println(good.get(i));
+        }
     }
 
+    //--------------------------------------------------------------------------------------------------------
+
+    private File badWords = new File("negative-words.txt");
     private ArrayList<String> bad = new ArrayList<String>();
-    private String[] words;
+    private Scanner bw;
+    {
+        try {
+            bw = new Scanner(badWords);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    { for (int i = 0; bw.hasNext(); i++)
+    {
+        String temp = bw.nextLine();
+        bad.add(temp);
+        //System.out.println(bad.get(i));
+    }
+    }
 
-    public int value;
+    //--------------------------------------------------------------------------------------------------------
+
+
+    private String[] words;
+    private int value;
     private final int BASE_VALUE = 50;
     private int positive = 2;
     private int negative = -2;
+
+    //--------------------------------------------------------------------------------------------------------
+
 
     public Comment(String str){
         words = Sentence.breakDown(str);
@@ -71,8 +97,11 @@ public class Comment {
     public static void main(String[] args){
         Comment test = new Comment("Good, I can feel your anger. Strike me down with all your hatred and your jounrey towards the dark side shall be complete");
         //System.out.println(test.valueOfComment());
+        System.out.println("Value of test: " + test.value);
         Comment GoodComment = new Comment("good, amicable, yay, happy, cool, awesome");
         //System.out.println(GoodComment.valueOfComment());
-        System.out.println(GoodComment.value);
+        System.out.println("Value of GoodComment: " + GoodComment.value);
+        Comment BadComment = new Comment("zaps, zealous, wrong, dead");
+        System.out.println("Value of BadComment: " + BadComment.value);
     }
 }
