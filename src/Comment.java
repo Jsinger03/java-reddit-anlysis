@@ -65,7 +65,7 @@ public class Comment {
 
 
     private String[] words;
-    private int value;
+    public int value;
     private final int BASE_VALUE = 50;
     private int positive = 2;
     private int negative = -2;

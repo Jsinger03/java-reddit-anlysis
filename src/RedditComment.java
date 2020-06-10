@@ -66,6 +66,11 @@ public class RedditComment {
 		return created_utc;
 	}
 
+	public void getBodyScore(){
+		Comment bodScore = new Comment(body);
+		bodyScore = bodScore.value;
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
