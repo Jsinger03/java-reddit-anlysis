@@ -1,3 +1,5 @@
+package src;
+
 public class RedditComment {
 	private String body;
 	private String author;
@@ -69,6 +71,11 @@ public class RedditComment {
 	 */
 	public int getCreated_utc() {
 		return created_utc;
+	}
+
+	public void getBodyScore(){
+		Comment bodScore = new Comment(body);
+		bodyScore = bodScore.value;
 	}
 
 	/* (non-Javadoc)

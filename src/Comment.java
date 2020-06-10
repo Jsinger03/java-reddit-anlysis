@@ -65,7 +65,7 @@ public class Comment {
 
 
     private String[] words;
-    private int value;
+    public int value;
     private final int BASE_VALUE = 50;
     private int positive = 2;
     private int negative = -2;
@@ -74,12 +74,17 @@ public class Comment {
 
 
     public Comment(String str){
-        words = Sentence.breakDown(str);
-//        for (int i = 0; i < words.length; i++){
-//            System.out.println(words[i]);
-//        }
         value = BASE_VALUE;
-        value = valueOfComment();
+
+        if (str == null) {
+            words = null;
+            value = 0;
+        }
+
+        else {
+            words = Sentence.breakDown(str);
+            value = valueOfComment();
+        }
     }
     private int valueOfComment(){
         //this will parse through the string of words, and compare it to the string[] of good words and the string[] of bad words

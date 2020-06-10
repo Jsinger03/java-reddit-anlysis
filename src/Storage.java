@@ -13,6 +13,11 @@ package src;
 /*
  */
 
-public class Storage {
+import java.util.ArrayList;
 
+public class Storage {
+//purpose: store all of the reddit comments
+    public ArrayList<String[]> subredditName = new ArrayList<>();
+    //make the arraylist contain all the comments, divided into words
+    public int[] subredditName_Bucket = new int[subredditName.size()];
 }
