@@ -110,3 +110,6 @@ public class Comment {
     //    System.out.println("Value of BadComment: " + BadComment.value);
     //}
 }
+
+//increase value range
+//associate different score with adjective that describes it
