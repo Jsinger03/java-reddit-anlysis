@@ -1,3 +1,5 @@
+package src;
+
 public class RedditComment {
 	private String body;
 	private String author;
