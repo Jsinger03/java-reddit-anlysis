@@ -1,4 +1,4 @@
-package src;
+// package src;
 //File Name: Comment.java
 //Name: Julian Singer
 //OSIS: N/A
@@ -21,7 +21,7 @@ import java.io.File;
 public class Comment {
 
 //--------------------------------------------------------------------------------------------------------
-    private File goodWords = new File("positive-words.txt");
+    private File goodWords = new File("../positive-words.txt");
     private ArrayList<String> good = new ArrayList<String>();
     private Scanner gw;
 
@@ -43,7 +43,7 @@ public class Comment {
 
     //--------------------------------------------------------------------------------------------------------
 
-    private File badWords = new File("negative-words.txt");
+    private File badWords = new File("../negative-words.txt");
     private ArrayList<String> bad = new ArrayList<String>();
     private Scanner bw;
     {
@@ -99,14 +99,14 @@ public class Comment {
         }
         return value;
     }
-    public static void main(String[] args){
-        Comment test = new Comment("Good, I can feel your anger. Strike me down with all your hatred and your jounrey towards the dark side shall be complete");
-        //System.out.println(test.valueOfComment());
-        System.out.println("Value of test: " + test.value);
-        Comment GoodComment = new Comment("good, amicable, yay, happy, cool, awesome");
-        //System.out.println(GoodComment.valueOfComment());
-        System.out.println("Value of GoodComment: " + GoodComment.value);
-        Comment BadComment = new Comment("zaps, zealous, wrong, dead");
-        System.out.println("Value of BadComment: " + BadComment.value);
-    }
+    //public static void main(String[] args){
+    //    Comment test = new Comment("Good, I can feel your anger. Strike me down with all your hatred and your jounrey towards the dark side shall be complete");
+    //    //System.out.println(test.valueOfComment());
+    //    System.out.println("Value of test: " + test.value);
+    //    Comment GoodComment = new Comment("good, amicable, yay, happy, cool, awesome");
+    //    //System.out.println(GoodComment.valueOfComment());
+    //    System.out.println("Value of GoodComment: " + GoodComment.value);
+    //    Comment BadComment = new Comment("zaps, zealous, wrong, dead");
+    //    System.out.println("Value of BadComment: " + BadComment.value);
+    //}
 }
