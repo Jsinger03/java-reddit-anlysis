@@ -13,7 +13,6 @@ public class JsonParse {
 
 	public static TreeMap<String, LinkedList<Pair>> parse() {
 		try {
-			int count = 0;
 			// Read the file based on commentSource
 			File redditComments = new File(commentSource);
 			Scanner reader = new Scanner(redditComments);
@@ -28,7 +27,7 @@ public class JsonParse {
 
 			// read through all the comments until there is no more lines.
 			// use count to make use of a small data set for testing purposes
-			while (reader.hasNextLine() && count < 50) { // very slow for 1.5 million comments
+			while (reader.hasNextLine()) { // very slow for 1.5 million comments
 				String data = reader.nextLine(); // read the data on current line
 				RedditComment comment = gson.fromJson(data, RedditComment.class); // convert json into
 													// java object
@@ -52,7 +51,6 @@ public class JsonParse {
 						complicatedLinkList.put(temp, newList);
 					}
 				}
-				count++;
 			}
 
 			return complicatedLinkList; // return the comments

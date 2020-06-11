@@ -7,8 +7,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class RealData {
-	private static String wordDataFile = "../test1.json";
-	private static String subredditDataFile = "../test2.json";
+	private static String wordDataFile = "../words.json";
+	private static String subredditDataFile = "../subredditData.json";
 
 	public static HashMap<String, Pair[]> getWords() {
 		try {
@@ -38,18 +38,18 @@ public class RealData {
 
 	}
 
-	public static void main(String[] args) {
-		HashMap<String, Pair[]> test = RealData.getWords();
-		Pair[] bruh =  test.get("The");
-		String name = bruh[0].getSubredditName();
-		System.out.println(name);
-		// for (String key : test.keySet()) {
-		// 	System.out.print(key + " ");
-		// 	for (double dataSet : test.get(key)) {
-		// 		System.out.print(dataSet + "\n");
-		// 	}
-		// }
-	}
+	// public static void main(String[] args) {
+	// 	HashMap<String, Pair[]> test = RealData.getWords();
+	// 	Pair[] bruh =  test.get("The");
+	// 	String name = bruh[0].getSubredditName();
+	// 	System.out.println(name);
+	// 	// for (String key : test.keySet()) {
+	// 	// 	System.out.print(key + " ");
+	// 	// 	for (double dataSet : test.get(key)) {
+	// 	// 		System.out.print(dataSet + "\n");
+	// 	// 	}
+	// 	// }
+	// }
 
 	public static HashMap<String, double[]> getSubredditData() {
 		try {
