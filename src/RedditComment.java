@@ -1,4 +1,4 @@
-// package src;
+package src;
 
 public class RedditComment {
 	private String body;
