@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
 public class RedditMain extends JFrame {
@@ -9,6 +8,7 @@ public class RedditMain extends JFrame {
 	private JLabel searchlLabel;
 	private JButton searchButton;
 	private JTextField input;
+	private BackEnd on = new BackEnd();
 
 	public RedditMain(String title) {
 		super(title);
@@ -36,7 +36,7 @@ public class RedditMain extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent actionEvent) {
 				String key = input.getText();
-				String result = BackEnd.runner(key);
+				String result = on.runner(key);
 				Component frame = new JFrame();
 				JOptionPane.showMessageDialog(frame, result);
 			}

@@ -26,6 +26,6 @@ public class ToJson {
 	}
 
 	public static void main(String[] args) throws IOException {
-		ToJson.writeJSON("../word.json", "../subredditData.json");
+		ToJson.writeJSON("../words.json", "../subredditData.json");
 	}
 }

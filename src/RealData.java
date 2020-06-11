@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class RealData {
-	private static String wordDataFile = "../words.json";
+	private static String wordDataFile = "../random15K.json";
 	private static String subredditDataFile = "../subredditData.json";
 
 	public static HashMap<String, Pair[]> getWords() {

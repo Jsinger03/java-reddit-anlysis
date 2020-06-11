@@ -9,17 +9,6 @@ public class SubredditFacts {
 	// change this variable below in case you are looking at another data set.
 	private static String commentSource = "../2015.json";
 
-	// public static void main(String[] args) {
-	// 	TreeMap<String, double[]> test = SubredditFacts.parse();
-	// 	for (String i : test.keySet()) {
-	// 		System.out.print(i + " ");
-	// 		for (double num : test.get(i)) {
-	// 			System.out.print(num + " ");
-	// 		}
-	// 		System.out.println();
-	// 	}
-	// }
-
 	public static TreeMap<String, double[]> parse() {
 		try {
 			// Read the file based on commentSource
