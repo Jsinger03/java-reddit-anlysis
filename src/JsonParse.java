@@ -1,4 +1,4 @@
-package src;
+//package src;
 // use the gson jar with -cp "gson-2.8.6.jar:."
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
