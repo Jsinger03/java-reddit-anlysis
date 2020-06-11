@@ -1,8 +1,6 @@
-// package src;
-
 public class RedditComment {
 	private String body;
-	private String author;
+	// private String author;
 	private String subreddit;
 	// private String link_id;
 	// private String parent_id;
@@ -77,34 +75,4 @@ public class RedditComment {
 		return "RedditComment [body=" + body + ", score=" + score + ", subreddit=" + subreddit + "]";
 	}
 
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((body == null) ? 0 : body.hashCode());
-		result = prime * result + score;
-		result = prime * result + ((subreddit == null) ? 0 : subreddit.hashCode());
-		return result;
-	}
-
-
-	/**
-	 * @return the author
-	 */
-	public String getAuthor() {
-		return author;
-	}
-
-
-	/**
-	 * @param author the author to set
-	 */
-	public void setAuthor(String author) {
-		this.author = author;
-	}
 }

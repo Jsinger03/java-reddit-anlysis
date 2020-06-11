@@ -8,20 +8,28 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class ToJson {
-	public static void writeJSON(String fileName) throws IOException {
-		// GsonBuilder builder = new GsonBuilder();
-		// Gson gson = builder.create();
-		FileWriter writer = new FileWriter(fileName);
-		HashMap<String, LinkedList<Pair>> newJsonTXT = JsonParse.parse();
-		for (String key : newJsonTXT.keySet()) {
-			String trim = newJsonTXT.get(key).toString();
-			String result = "{\"" + key + "\": " + trim.substring(1, trim.length() - 1) + "}" + "\n";
+	public static void writeJSON(String fileName, String fileNameTwo) throws IOException {
+		// FileWriter writer = new FileWriter(fileName);
+		// HashMap<String, LinkedList<Pair>> newJsonTXT = JsonParse.parse();
+		// for (String key : newJsonTXT.keySet()) {
+		// String trim = newJsonTXT.get(key).toString();
+		// String result = "{\"" + key + "\": " + trim.substring(1, trim.length() - 1) +
+		// "}" + "\n";
+		// writer.write(result);
+		// }
+		// writer.close();
+		FileWriter writer = new FileWriter(fileNameTwo);
+		HashMap<String, double[]> newJsonTXTtwo = SubredditFacts.parse();
+		for (String key : newJsonTXTtwo.keySet()) {
+			double[] dubs = newJsonTXTtwo.get(key);
+			String result = "{\"" + key + "\": " + "{ \"TotalComments\": " + dubs[0] + ", \"TotalScore\": "
+					+ dubs[1] + ", \"AverageScore\": " + dubs[2] + "}}" + "\n";
 			writer.write(result);
 		}
 		writer.close();
 	}
 
 	public static void main(String[] args) throws IOException {
-		ToJson.writeJSON("../words.json");
+		ToJson.writeJSON("../words.json", "../subredditData.json");
 	}
 }
