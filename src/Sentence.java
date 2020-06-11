@@ -11,10 +11,4 @@ public class Sentence {
 		// note: any character outside of letters and numbers will be lost
 	}
 
-<<<<<<< HEAD
-    // NOTE:
-    //press the hammer to build it, arrow to run
-
-=======
 }
->>>>>>> 925a1d623e8aee861179a3d4a99bd3ebc1b96f2d

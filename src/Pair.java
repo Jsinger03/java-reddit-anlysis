@@ -29,7 +29,8 @@ public class Pair {
 
 	@Override
 	public String toString() {
-		return "{ \"subredditName\": " + subredditName + ", \"TimesOfOccurrence\": " +  importantNum+ " }";
+		String result = "{ \"subredditName\": \"" + subredditName + "\", \"TimesOfOccurrence\": " +  importantNum+ " }";
+		return result;
 	}
 
 	/*

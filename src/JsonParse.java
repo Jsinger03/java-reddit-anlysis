@@ -3,23 +3,23 @@ import com.google.gson.GsonBuilder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class JsonParse {
 	// change this variable below in case you are looking at another data set.
 	private static String commentSource = "../2015.json";
 
-	public static HashMap<String, LinkedList<Pair>> parse() {
+	public static TreeMap<String, LinkedList<Pair>> parse() {
 		try {
 			// Read the file based on commentSource
 			File redditComments = new File(commentSource);
 			Scanner reader = new Scanner(redditComments);
 
 			// make an arraylist to store the comments
-			HashMap<String, LinkedList<Pair>> complicatedLinkList = new HashMap<String, LinkedList<Pair>>();
+			TreeMap<String, LinkedList<Pair>> complicatedLinkList = new TreeMap<String, LinkedList<Pair>>();
 
 			// intalize json convertor to convert json objects into java objects
 			GsonBuilder builder = new GsonBuilder();
@@ -32,11 +32,12 @@ public class JsonParse {
 				String data = reader.nextLine(); // read the data on current line
 				RedditComment comment = gson.fromJson(data, RedditComment.class); // convert json into
 													// java object
-				String[] wordsInSentence = Sentence.breakDown(comment.getBody()); // break down comment into words
-				Pair newData = new Pair(comment.getSubreddit()); // 
+				String[] wordsInSentence = Sentence.breakDown(comment.getBody()); // break down comment
+													// into words
+				Pair newData = new Pair(comment.getSubreddit()); //
 				for (int i = 0; i < wordsInSentence.length; i++) {
 					String temp = wordsInSentence[i];
-					
+
 					// checks if there is an occurrence of that word
 					// if not it gets added to the link list
 					if (complicatedLinkList.containsKey(temp)) {
