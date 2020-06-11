@@ -49,15 +49,15 @@ public class Sentence {
         //note: any character outside of letters and numbers will be lost
     }
 
-     // public static void main(String[] args){
-     //     String str = "how,  1 do. YOU know? What! IS  Life?!";
-     //     String[] sen1;
-     //     sen1 = Sentence.breakDown(str);
-     //     for (int i = 0; i< sen1.length; i++)
-     //     {
-     //         System.out.println(sen1[i]);
-     //     }
-     // }
+//     public static void main(String[] args){
+//          String str = "how,  1 do. YOU know? What! IS  Life?!";
+//          String[] sen1;
+//          sen1 = Sentence.breakDown(str);
+//         for (int i = 0; i< sen1.length; i++)
+//          {
+//             System.out.println(sen1[i]);
+//      }
+  }
 
     // NOTE:
     //press the hammer to build it, arrow to run

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+//package src;
+// use the gson jar with -cp "gson-2.8.6.jar:."
+>>>>>>> 65784642126bc70b5d6d6add75a1ec41731e4a4e
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
