@@ -1,30 +1,31 @@
-import cs1.Keyboard;
-import java.util.LinkedList;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class BackEnd {
-	public static void runner(){
+	public static String runner(String key) {
 		// Scanner input = new Scanner(System.in); // Create a Scanner object
 		// String userName = input.nextLine(); // Read user input
-		String fullString = Keyboard.readString();
+		// String fullString = Keyboard.readString();
 		HashMap<String, Pair[]> wordBank = RealData.getWords();
 		HashMap<String, double[]> subReddits = RealData.getSubredditData();
-		Pair[] results = wordBank.get(fullString);
+		Pair[] results = wordBank.get(key);
 		// System.out.println(results[0].getSubredditName());
 		// if the word is not found a message saying that it is missing should be
 		// returned / printed
 		// IDK which
+		String result = "";
 		if (results == null)
-			System.out.println("Word not found");
+			result = "Word not found - Try another!";
 		else {
-			for (Pair dataSet : results) {
+			int count = 0;
+			for (int i = 0; i < results.length && count < 20; i++) {
+				Pair dataSet = results[i];
 				String name = dataSet.getSubredditName();
-				System.out.println("This word is found on: " + name + " and is found: "
-						+ dataSet.getTimesOfOccurrence()  //score
-						+ "times, and the average score of a comment on this subreddit is: " + 
-
-						subReddits.get(name)[2]);
+				result += "This word is found on the Subreddit: " + name + " and is found: "
+						+ dataSet.getTimesOfOccurrence()
+						+ " times, and the average score of a comment on this subReddit is: "
+						+ subReddits.get(name)[2] + "\n";
+			}
 		}
+		return result;
 	}
 }

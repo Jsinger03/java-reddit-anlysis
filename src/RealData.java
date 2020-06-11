@@ -1,13 +1,14 @@
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class RealData {
-	private static String wordDataFile = "../words.json";
-	private static String subredditDataFile = "../subredditData.json";
+	private static String wordDataFile = "../test1.json";
+	private static String subredditDataFile = "../test2.json";
 
 	public static HashMap<String, Pair[]> getWords() {
 		try {
