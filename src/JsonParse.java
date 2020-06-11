@@ -10,14 +10,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class JsonParse {
+	// change this variable below in case you are looking at another data set.
 	private static String commentSource = "../2015.json";
 
-	public static void main(String[] args) {
-		HashMap<String, String>test = parse();
-		for (String i : test.keySet()) {
-			System.out.println(i);
-		}
-	}
+	// public static void main(String[] args) {
+	// 	HashMap<String, LinkedList<Pair>> test = parse();
+	// 	for (String i : test.keySet()) {
+	// 		System.out.println(i);
+	// 		System.out.println(test.get(i));
+	// 	}
+	// }
 
 	public static HashMap<String, LinkedList<Pair>> parse() {
 		try {
@@ -28,25 +30,38 @@ public class JsonParse {
 
 			// make an arraylist to store the comments
 			HashMap<String, LinkedList<Pair>> complicatedLinkList = new HashMap<String, LinkedList<Pair>>();
-			
+
 			// intalize json convertor to convert json objects into java objects
 			GsonBuilder builder = new GsonBuilder();
 			builder.setPrettyPrinting();
 			Gson gson = builder.create();
 
-			// read through all the comments until there is no more lines.
-			while (reader.hasNextLine() && count < 50) {
+			// read through all the comments until there is no more lines. 
+			while (reader.hasNextLine()) { // very slow for 1.5 million comments
 				String data = reader.nextLine(); // read the data on current line
 				RedditComment comment = gson.fromJson(data, RedditComment.class); // convert json into
 													// java object
-				Pair newData = new Pair(comment.getSubreddit());
-				String temp = comment.getAuthor();
+				String[] wordsInSentence = Sentence.breakDown(comment.getBody()); // break down comment into words
+				Pair newData = new Pair(comment.getSubreddit()); // 
+				for (int i = 0; i < wordsInSentence.length; i++) {
+					String temp = wordsInSentence[i];
+					
+					// checks if there is an occurrence of that word
+					// if not it gets added to the link list
+					if (complicatedLinkList.containsKey(temp)) {
+						int check = complicatedLinkList.get(temp).indexOf(newData);
+						if (check != -1) {
+							complicatedLinkList.get(temp).get(check).setNewNum();
+						} else
+							complicatedLinkList.get(temp).add(newData);
+					} else {
+						LinkedList<Pair> newList = new LinkedList<Pair>();
+						newList.add(newData);
+						complicatedLinkList.put(temp, newList);
+					}
+				}
 
-				if (complicatedLinkList.containsKey(temp)))
-					complicatedLinkList.get(temp).add(newData));
-				else
-					complicatedLinkList.put(temp, new LinkedList<Pair>().addFirst(newData)));
-				count++;
+				// count++;
 			}
 			return complicatedLinkList; // return the comments
 
@@ -56,5 +71,5 @@ public class JsonParse {
 			return null; // we need to return anything
 		}
 
-	} 
+	}
 }
