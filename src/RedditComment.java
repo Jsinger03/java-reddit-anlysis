@@ -1,8 +1,8 @@
 // package src;
 
 public class RedditComment {
-	// private String body;
-	// private String author;
+	private String body;
+	private String author;
 	private String subreddit;
 	// private String link_id;
 	// private String parent_id;
@@ -21,6 +21,22 @@ public class RedditComment {
 
 
 	/**
+	 * @return the body
+	 */
+	public String getBody() {
+		return body;
+	}
+
+
+	/**
+	 * @param body the body to set
+	 */
+	public void setBody(String body) {
+		this.body = body;
+	}
+
+
+	/**
 	 * @return the subreddit
 	 */
 	public String getSubreddit() {
@@ -34,22 +50,6 @@ public class RedditComment {
 	public void setSubreddit(String subreddit) {
 		this.subreddit = subreddit;
 	}
-
-
-	/**
-	 * @return the adjective
-	 */
-	// public String getAdjective() {
-	// 	return adjective;
-	// }
-
-
-	// /**
-	//  * @param adjective the adjective to set
-	//  */
-	// public void setAdjective(String adjective) {
-	// 	this.adjective = adjective;
-	// }
 
 
 	/**
@@ -74,7 +74,7 @@ public class RedditComment {
 	
 	@Override
 	public String toString() {
-		return "RedditComment [score=" + score + ", subreddit=" + subreddit + "]";
+		return "RedditComment [body=" + body + ", score=" + score + ", subreddit=" + subreddit + "]";
 	}
 
 
@@ -86,9 +86,25 @@ public class RedditComment {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((body == null) ? 0 : body.hashCode());
 		result = prime * result + score;
 		result = prime * result + ((subreddit == null) ? 0 : subreddit.hashCode());
 		return result;
 	}
 
+
+	/**
+	 * @return the author
+	 */
+	public String getAuthor() {
+		return author;
+	}
+
+
+	/**
+	 * @param author the author to set
+	 */
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 }
