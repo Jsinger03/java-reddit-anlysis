@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.io.File;
 
 public class Comment {
+//this class is not used in the final product
 
 //--------------------------------------------------------------------------------------------------------
     private File goodWords = new File("../positive-words.txt");
