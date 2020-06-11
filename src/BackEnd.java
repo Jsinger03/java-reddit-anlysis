@@ -3,6 +3,7 @@ import java.util.HashMap;
 public class BackEnd {
 	static private HashMap<String, Pair[]> wordBank = RealData.getWords();
 	static private HashMap<String, double[]> subReddits = RealData.getSubredditData();
+
 	public String runner(String key) {
 		Pair[] results = wordBank.get(key);
 		// if the word is not found a message saying that it is missing should be
