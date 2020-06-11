@@ -38,7 +38,8 @@ public class JsonParse {
 			builder.setPrettyPrinting();
 			Gson gson = builder.create();
 
-			// read through all the comments until there is no more lines. 
+			// read through all the comments until there is no more lines.
+			// use count to make use of a small data set for testing purposes
 			while (reader.hasNextLine()) { // very slow for 1.5 million comments
 				String data = reader.nextLine(); // read the data on current line
 				RedditComment comment = gson.fromJson(data, RedditComment.class); // convert json into
