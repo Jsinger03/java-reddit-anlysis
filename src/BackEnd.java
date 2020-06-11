@@ -1,24 +1,24 @@
+import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class BackEnd {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); // Create a Scanner object
 		String userName = input.nextLine(); // Read user input
-		HashMap<String, LinkedList<Pair>> wordBank = JsonParse.parse();
-		// wordBank has 3 errors
-		// HashMap<String, double[]> subReddits = SubredditFacts.parse();
-		// subReddits has 19 errors
+		HashMap<String, LinkedList<Pair>> wordBank = RealData.getWords();
+		HashMap<String, double[]> subReddits = RealData.getSubredditData();
 
 		if (wordBank.get(input) == null)
-			return "Word not found";
+			System.out.println("Word not found");
 		// if the word is not found a message saying that it is missing should be
 		// returned / printed
 		// IDK which
 		else {
-			for (Pair item : wordBank) {
-				System.out.println("This word is found on: " + wordBank.getSubreddit + " "
-						+ wordBank.getScore()
-						+ "times, and the average score of a comment on this subreddit is: "); // +
+			for (Pair item : wordBank.get(input)) {
+				System.out.println("This word is found on: " + wordBank.get(input).getFirst().getName() + " "
+						+ wordBank.get(input).getFirst().getNum(0) //score
+						+ "times, and the average score of a comment on this subreddit is: " + subReddits.get(wordBank.get(input).getFirst().getName())[2]); // +
 															// ---parse
 															// through
 															// the
