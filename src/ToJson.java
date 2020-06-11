@@ -10,8 +10,7 @@ public class ToJson {
 		TreeMap<String, LinkedList<Pair>> newJsonTXT = JsonParse.parse();
 		for (String key : newJsonTXT.keySet()) {
 			String trim = newJsonTXT.get(key).toString();
-			trim = trim.substring(1, trim.length() - 1);
-			trim = "{\"" + key + "\": " + trim + "}" + "\n";
+			trim = "{ \"word\": \"" + key + "\", \"data\":" + trim + " }\n";
 			writer.write(trim);
 		}
 		writer.close();
@@ -19,8 +18,8 @@ public class ToJson {
 		TreeMap<String, double[]> newJsonTXTtwo = SubredditFacts.parse();
 		for (String key : newJsonTXTtwo.keySet()) {
 			double[] dubs = newJsonTXTtwo.get(key);
-			String result = "{\"" + key + "\": " + "{ \"TotalComments\": " + dubs[0] + ", \"TotalScore\": "
-					+ dubs[1] + ", \"AverageScore\": " + dubs[2] + "}}" + "\n";
+			// String result = "[" + "{ \"TotatlComments\": " + dubs[0] + "}, { \"TotalScore\": " + dubs[1] + "}, {  \"AverageScore\": " + dubs[2] + "} ]}";
+			String result = "{ \"subredditName\": \"" + key + "\", \"data\":" + "[" + dubs[0]+", " +  dubs[1] + ", "+ dubs[2] + "] }" + "\n";
 			writer.write(result);
 		}
 		writer.close();
@@ -29,18 +28,4 @@ public class ToJson {
 	public static void main(String[] args) throws IOException {
 		ToJson.writeJSON("../words.json", "../subredditData.json");
 	}
-
-	// public static TreeMap<String, LinkedList<Pair>> sortHash(HashMap<String, LinkedList<Pair>> table) {
-	// 	TreeMap<String, LinkedList<Pair>> sortedMap = new TreeMap<String, LinkedList<Pair>>();
-	// 	sortedMap.putAll(table);
-	// 	return sortedMap;
-
-	// }
-
-	// public static TreeMap<String, double[]> sortHashTwo(HashMap<String, double[]> table) {
-	// 	TreeMap<String, double[]> sortedMap = new TreeMap<String, double[]>();
-	// 	sortedMap.putAll(table);
-	// 	return sortedMap;
-
-	// }
 }

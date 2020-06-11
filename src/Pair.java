@@ -2,23 +2,19 @@ import java.util.Arrays;
 
 public class Pair {
 	private String subredditName;
-	private int importantNum;
+	private int timesOfOccurrence;
+
+	public Pair() {
+	}
 
 	public Pair(String subreddit) {
 		this.subredditName = subreddit;
-		importantNum = 1;
+		timesOfOccurrence = 1;
 	}
 
-	public String getName() {
-		return subredditName;
-	}
-
-	public int getNum(int index) {
-		return importantNum;
-	}
 
 	public void setNewNum() {
-		importantNum++;
+		timesOfOccurrence++;
 	}
 
 	/*
@@ -29,30 +25,36 @@ public class Pair {
 
 	@Override
 	public String toString() {
-		String result = "{ \"subredditName\": \"" + subredditName + "\", \"TimesOfOccurrence\": " +  importantNum+ " }";
+		String result = "{ \"subredditName\": \"" + subredditName + "\", \"timesOfOccurrence\": " +  timesOfOccurrence + " }";
 		return result;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
+	/**
+	 * @return the subredditName
 	 */
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pair other = (Pair) obj;
-		if (subredditName == null) {
-			if (other.subredditName != null)
-				return false;
-		} else if (!subredditName.equals(other.subredditName))
-			return false;
-		return true;
+	public String getSubredditName() {
+		return subredditName;
 	}
+
+	/**
+	 * @param subredditName the subredditName to set
+	 */
+	public void setSubredditName(String subredditName) {
+		this.subredditName = subredditName;
+	}
+
+	/**
+	 * @return the timesOfOccurrence
+	 */
+	public int getTimesOfOccurrence() {
+		return timesOfOccurrence;
+	}
+
+	/**
+	 * @param timesOfOccurrence the timesOfOccurrence to set
+	 */
+	public void setTimesOfOccurrence(int timesOfOccurrence) {
+		this.timesOfOccurrence = timesOfOccurrence;
+	}
+
 }
