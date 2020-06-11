@@ -59,7 +59,6 @@ public class SubredditFacts{
 
                 count++;
             }
-            return complicatedLinkList; // return the comments
 
         catch (FileNotFoundException e) { // in case the file isn't found.
             System.out.println("File Not Found");
