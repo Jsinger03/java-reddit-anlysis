@@ -5,14 +5,18 @@ public class BackEnd{
     Scanner input = new Scanner(System.in);  // Create a Scanner object
     String userName = input.nextLine();  // Read user input
     HashMap<String, LinkedList<Pair>> wordBank = JsonParse.parse();
-    HashMap<String, double[]> subReddits = SubredditFacts.parse();
+    //wordBank has 3 errors
+    //HashMap<String, double[]> subReddits = SubredditFacts.parse();
+        //subReddits has 19 errors
 
         if (wordBank.get(input) == null)
             return "Word not found";
+        //if the word is not found a message saying that it is missing should be returned / printed
+        //IDK which
         else {
-            for (Pair:
+            for (Pair item:
                  wordBank) {
-                System.out.println("This word is found on: " + wordBank.getSubreddit + " " + wordBank.getScore() + "times, and the average score of a comment on this subreddit is: " + ---parse through the next Hashmap and take the average value from there);
+                System.out.println("This word is found on: " + wordBank.getSubreddit + " " + wordBank.getScore() + "times, and the average score of a comment on this subreddit is: "); // + ---parse through the next Hashmap and take the average value from there/);
                 //IMPORTANT: This stuff definitely doesnt work. The methods above are placeholders because I am unsure how we are to get the values
                 //we need to parse through the LinkedList and take each name of a subreddit with its acompanying number of times where that word appeared
                 //and print those, and then we need to use that name of the subreddit as the input for parsing the second Hash to get the average score of the subreddit
