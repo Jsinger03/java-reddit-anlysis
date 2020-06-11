@@ -6,7 +6,7 @@ public class BackEnd {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); // Create a Scanner object
 		String userName = input.nextLine(); // Read user input
-		HashMap<String, LinkedList<Pair>> wordBank = RealData.getWords();
+		HashMap<String, Pair[]> wordBank = RealData.getWords();
 		HashMap<String, double[]> subReddits = RealData.getSubredditData();
 
 		if (wordBank.get(input) == null)
@@ -15,10 +15,10 @@ public class BackEnd {
 		// returned / printed
 		// IDK which
 		else {
-			for (Pair item : wordBank.get(input)) {
-				System.out.println("This word is found on: " + wordBank.get(input).getFirst().getName() + " "
-						+ wordBank.get(input).getFirst().getNum(0) //score
-						+ "times, and the average score of a comment on this subreddit is: " + subReddits.get(wordBank.get(input).getFirst().getName())[2]); // +
+			for (Pair dataSet : wordBank.get(input)) {
+				System.out.println("This word is found on: " + wordBank.get(input).getName() + " "
+						+ wordBank.get(input).getNum(0) //score
+						+ "times, and the average score of a comment on this subreddit is: " + subReddits.get(wordBank.get(input).getName())[2]); // +
 															// ---parse
 															// through
 															// the
