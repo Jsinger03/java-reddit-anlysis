@@ -37,15 +37,18 @@ public class RealData {
 
 	}
 
-	// public static void main(String[] args) {
-	// 	HashMap<String, double[]> test = RealData.getSubredditData();
-	// 	for (String key : test.keySet()) {
-	// 		System.out.print(key + " ");
-	// 		for (double dataSet : test.get(key)) {
-	// 			System.out.print(dataSet + "\n");
-	// 		}
-	// 	}
-	// }
+	public static void main(String[] args) {
+		HashMap<String, Pair[]> test = RealData.getWords();
+		Pair[] bruh =  test.get("The");
+		String name = bruh[0].getSubredditName();
+		System.out.println(name);
+		// for (String key : test.keySet()) {
+		// 	System.out.print(key + " ");
+		// 	for (double dataSet : test.get(key)) {
+		// 		System.out.print(dataSet + "\n");
+		// 	}
+		// }
+	}
 
 	public static HashMap<String, double[]> getSubredditData() {
 		try {
