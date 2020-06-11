@@ -1,18 +1,3 @@
-// package src;
-//File Name: Comment.java
-//Name: Julian Singer
-//OSIS: N/A
-
-//Description:
-/*
- */
-//Known bugs:
-/*
- */
-//Learned:
-/*
- */
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
