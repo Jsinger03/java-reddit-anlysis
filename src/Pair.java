@@ -29,7 +29,7 @@ public class Pair {
 
 	@Override
 	public String toString() {
-		return "Pair [importantNum: " + importantNum + ", subredditName: " + subredditName + "]";
+		return "{ \"subredditName\": " + subredditName + ", \"TimesOfOccurrence\": " +  importantNum+ " }";
 	}
 
 	/*
