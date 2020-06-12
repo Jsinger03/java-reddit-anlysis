@@ -22,6 +22,7 @@ public class BackEnd {
 						+ dataSet.getTimesOfOccurrence()
 						+ " times, and the average score of a comment on this subReddit is: "
 						+ subReddits.get(name)[2] + "\n";
+				count++;
 			}
 		}
 		return result;
