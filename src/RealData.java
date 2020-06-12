@@ -21,7 +21,6 @@ public class RealData {
 			HashMap<String, Pair[]> wordData = new HashMap<String, Pair[]>();
 
 			GsonBuilder builder = new GsonBuilder();
-			builder.setPrettyPrinting();
 			Gson gson = builder.create();
 			String data;
 			while (reader.hasNext()) {
@@ -60,7 +59,6 @@ public class RealData {
 			HashMap<String, double[]> subs = new HashMap<String, double[]>();
 
 			GsonBuilder builder = new GsonBuilder();
-			builder.setPrettyPrinting();
 			Gson gson = builder.create();
 			String data;
 			while (reader.hasNext()) {
