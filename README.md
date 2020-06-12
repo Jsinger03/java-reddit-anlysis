@@ -23,6 +23,9 @@ What to run for Windows:
 
 5) Follow prompts on GUI
 
+OR
+
+use run.bat
 ----------------------------------------------------------------------------------------------
 
 What to run for Linux / MacOS:
