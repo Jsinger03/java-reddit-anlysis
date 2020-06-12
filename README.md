@@ -1,4 +1,4 @@
-# iava-reddit-analysis
+# java-reddit-analysis
 Reddit anlysis - really basic.
 
 Carlos "Karl" Hernandez and Julian Singer
