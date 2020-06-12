@@ -40,6 +40,10 @@ What to run for Linux / MacOS:
 
 5) Follow prompts on GUI
 
+OR
+
+run make in the terminal
+
 
 ----------------------------------------------------------------------------------------------
 
