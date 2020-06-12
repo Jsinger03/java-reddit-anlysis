@@ -6,7 +6,8 @@ Carlos "Karl" Hernandez and Julian Singer
 ----------------------------------------------------------------------------------------------
 
 Important Note: We are running java14
-This will not run on other versions of java
+This will not run on other versions of java below Java 13
+check your version with java -version
 
 ----------------------------------------------------------------------------------------------
 
