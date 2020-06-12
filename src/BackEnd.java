@@ -1,5 +1,7 @@
+import database.*;
 import java.util.HashMap;
 
+// all for this...
 public class BackEnd {
 	static private HashMap<String, Pair[]> wordBank = RealData.getWords();
 	static private HashMap<String, double[]> subReddits = RealData.getSubredditData();

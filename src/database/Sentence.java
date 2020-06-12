@@ -1,3 +1,5 @@
+package database;
+
 public class Sentence {
 //this is meant to break a sentence, or in this case a Reddit Comment, down into its individual words
 	public static String[] breakDown(String sentence) {

@@ -1,3 +1,4 @@
+import database.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -7,7 +8,9 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class RealData {
-	private static String wordDataFile = "../random50K.json";
+	// for the sake of this we will only do 15k words
+	// change below to see what files our functions will look at
+	private static String wordDataFile = "../random15K.json";
 	private static String subredditDataFile = "../subredditData.json";
 
 	public static HashMap<String, Pair[]> getWords() {

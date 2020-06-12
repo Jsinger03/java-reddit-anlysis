@@ -11,7 +11,7 @@ What to run for Windows:
 
 2) In the terminal, input: javac -cp "gson-2.8.6.jar;." RedditMain.java
 
-3) java -cp "gson-2.8.6.jar;."
+3) java -cp "gson-2.8.6.jar;." RedditMain
 
 4) Wait as database is initialized
 
@@ -25,7 +25,7 @@ What to run for Linux / MacOS:
 
 2) In the terminal, input: javac -cp "gson-2.8.6.jar:." RedditMain.java
 
-3) java -cp "gson-2.8.6.jar;."
+3) java -cp "gson-2.8.6.jar:." RedditMain
 
 4) Wait as database is initialized
 

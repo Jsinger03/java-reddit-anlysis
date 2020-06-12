@@ -1,3 +1,4 @@
+package database;
 // Not used but early sample of what we were going to do. Too slow!
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ public class Comment {
 //this class is not used in the final product
 
 //--------------------------------------------------------------------------------------------------------
-    private File goodWords = new File("../positive-words.txt");
+    private File goodWords = new File("../../positive-words.txt");
     private ArrayList<String> good = new ArrayList<String>();
     private Scanner gw;
 

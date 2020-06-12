@@ -1,3 +1,5 @@
+package database;
+
 public class WordsData {
 	private String word;
 	private Pair[] data;

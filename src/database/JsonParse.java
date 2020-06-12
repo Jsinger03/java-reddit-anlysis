@@ -1,3 +1,4 @@
+package database;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -9,7 +10,7 @@ import java.util.TreeMap;
 
 public class JsonParse {
 	// change this variable below in case you are looking at another data set.
-	private static String commentSource = "../2015.json";
+	private static String commentSource = "../../2015.json";
 
 	public static TreeMap<String, LinkedList<Pair>> parse() {
 		try {

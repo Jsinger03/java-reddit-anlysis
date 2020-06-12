@@ -1,3 +1,5 @@
+package database;
+
 public class SubredditData {
 	private String subredditName;
 	private double[] data;

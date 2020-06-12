@@ -1,3 +1,4 @@
+package database;
 public class RedditComment {
 	private String body;
 	// private String author;
@@ -12,7 +13,6 @@ public class RedditComment {
 
 	// databaase (reddit commentSource <- JsonParse) -> RedditComment (ArrayList -> subreddit -> sort()) -> gui (inputs) -> RedditComment -> parse sum number (or take the bodyScore) -> gui display 10 commments 
 	//
-	// Limations: 1) slow 2) words
 	
 	RedditComment() {
 	}
