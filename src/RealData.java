@@ -23,13 +23,11 @@ public class RealData {
 			GsonBuilder builder = new GsonBuilder();
 			builder.setPrettyPrinting();
 			Gson gson = builder.create();
-
+			String data;
 			while (reader.hasNext()) {
-				String data = reader.nextLine();
+				data = reader.nextLine();
 				WordsData dataSet = gson.fromJson(data, WordsData.class);
-				String key = dataSet.getWord();
-				Pair[] pairs = dataSet.getData();
-				wordData.put(key, pairs);
+				wordData.put(dataSet.getWord(), dataSet.getData());
 			}
 			return wordData;
 		} catch (FileNotFoundException e) {
@@ -64,9 +62,9 @@ public class RealData {
 			GsonBuilder builder = new GsonBuilder();
 			builder.setPrettyPrinting();
 			Gson gson = builder.create();
-
+			String data;
 			while (reader.hasNext()) {
-				String data = reader.nextLine();
+				data = reader.nextLine();
 				SubredditData sub = gson.fromJson(data, SubredditData.class);
 				subs.put(sub.getSubredditName(), sub.getData());
 
